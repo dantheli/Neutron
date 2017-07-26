@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.5.0)
+  - Neutron (0.1.0):
+    - Alamofire
+    - PromiseKit/Alamofire
+    - SwiftyJSON
+  - PromiseKit/Alamofire (4.2.2):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (4.2.2)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Neutron (from `../`)
+
+EXTERNAL SOURCES:
+  Neutron:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Neutron: a6089c264a1cbde1ad8332d3a03bd6145065f52c
+  PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 92ec696ee4330fae910ff7c8c5017a5a13fecc4f
+
+COCOAPODS: 1.2.1

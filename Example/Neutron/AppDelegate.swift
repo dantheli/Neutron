@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Neutron
-//
-//  Created by Daniel Li on 07/26/2017.
-//  Copyright (c) 2017 Daniel Li. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

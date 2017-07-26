@@ -52,6 +52,16 @@
                ReferencedContainer = "container:Neutron.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4251A8E21F292D21001829C5"
+               BuildableName = "Neutron_ExampleTests.xctest"
+               BlueprintName = "Neutron_ExampleTests"
+               ReferencedContainer = "container:Neutron.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

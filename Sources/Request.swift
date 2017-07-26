@@ -1,0 +1,125 @@
+import Alamofire
+import PromiseKit
+
+/// `Request` is a protocol to which structs can conform to create expressive, self-documenting
+/// REST API requests.
+///
+/// A protocol can also inherit `Request` and supply its own defaults.
+public protocol Request: CustomStringConvertible {
+
+    /// Required type that the user of the `Request` wishes to get in return.
+    /// The creator of a `Request` must produce this ResponseType in the required `process` method.
+    ///
+    /// e.g. A "get all posts" request may want `ResponseType` to be `[Post]`, array of `Post`s
+    associatedtype ResponseType
+
+    /// The base host URL for the `Request`. This requires `http://` or `https
+    ///
+    /// Default is `http://localhost`.
+    var host: String { get }
+
+    /// The version of the API, if any, from which the `Request` wishes to retrieve.`
+    /// If `.versioned`, the protocol will insert the `/v#` route where # is the version number.
+    ///
+    /// Default is `.none`.
+    var api: APIVersion { get }
+
+    /// Required route for the `Request`, with no default
+    ///
+    /// e.g. "/posts"
+    var route: String { get }
+
+    /// The HTTP method of the `Request`. See Alamofire's documentation.
+    ///
+    /// Default is `.get`.
+    var method: HTTPMethod { get }
+
+    /// Parameters for the `Request`
+    ///
+    /// Default is empty dictionary
+    var parameters: [String : Any] { get }
+
+    /// Encoding for the parameters.
+    ///
+    /// Default is `URLEncoding.default`
+    var encoding: ParameterEncoding { get }
+    var headers: HTTPHeaders { get }
+
+    /// Required method that the creator of the `Request` must implement. If the network request
+    /// is successful, this method will be called with the data from the response body.
+    func process(response: Data) throws -> ResponseType
+}
+
+/// Version of the server's API.
+public enum APIVersion {
+
+    /// No versioning
+    case none
+
+    /// Versioned
+    case versioned(Int)
+}
+
+public extension Request {
+
+    // String description for CustomStringConvertible
+    var description: String {
+        return "\(method) request to \(route) with \(encoding), \(parameters) and \(headers)"
+    }
+
+    var host: String { return "http://localhost" }
+
+    var api: APIVersion { return .none }
+
+    var apiUrlString: String {
+        switch api {
+        case .none:
+            return ""
+        case .versioned(let version):
+            return Neutron.apiVersionFormat(version)
+        }
+    }
+
+    var method: HTTPMethod { return .get }
+    var parameters: [String : Any] { return [:] }
+    var encoding: ParameterEncoding { return URLEncoding.default }
+    var headers: HTTPHeaders { return [:] }
+
+    func dataRequest() throws -> DataRequest {
+        guard let url = URL(string: host + apiUrlString + route) else {
+            throw NeutronError.badUrl
+        }
+
+        return Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+    }
+
+    func make() -> Promise<ResponseType> {
+        do {
+            let promise = try dataRequest()
+                .validate()
+                .responseData()
+                .then { data -> ResponseType in
+                    return try self.process(response: data)
+            }
+            return promise
+        } catch {
+            return Promise<ResponseType>(error: error)
+        }
+    }
+}
+
+///
+/// A `NeutronError` represents custom errors from networking
+public enum NeutronError: Error {
+    case badJsonResponse
+    case badUrl
+
+    public var localizedDescription: String {
+        switch self {
+        case .badJsonResponse:
+            return "Unexpected values in JSON"
+        case .badUrl:
+            return "Bad url"
+        }
+    }
+}
