@@ -1,14 +1,15 @@
 # Neutron
 
 [![Version](https://img.shields.io/cocoapods/v/Neutron.svg?style=flat)](http://cocoapods.org/pods/Neutron)
-[![License](https://img.shields.io/cocoapods/l/Neutron.svg?style=flat)](http://cocoapods.org/pods/Neutron)
 [![Platform](https://img.shields.io/cocoapods/p/Neutron.svg?style=flat)](http://cocoapods.org/pods/Neutron)
+[![License](https://img.shields.io/cocoapods/l/Neutron.svg?style=flat)](http://cocoapods.org/pods/Neutron)
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Requires Swift 3.0 or above
 
 ## Installation
 
@@ -21,7 +22,7 @@ pod "Neutron"
 
 ## Author
 
-Daniel Li, dli@squarespace.com
+Daniel Li, dl743@cornell.edu
 
 ## License
 
