@@ -34,15 +34,19 @@ public protocol Request: CustomStringConvertible {
     /// Default is `.get`.
     var method: HTTPMethod { get }
 
-    /// Parameters for the `Request`
+    /// Parameters for the `Request`.
     ///
-    /// Default is empty dictionary
+    /// Default is empty dictionary.
     var parameters: [String : Any] { get }
 
     /// Encoding for the parameters.
     ///
     /// Default is `URLEncoding.default`
     var encoding: ParameterEncoding { get }
+
+    /// Headers for the Request.
+    ///
+    /// Default is empty dictionary.
     var headers: HTTPHeaders { get }
 
     /// Required method that the creator of the `Request` must implement. If the network request
@@ -111,13 +115,13 @@ public extension Request {
 ///
 /// A `NeutronError` represents custom errors from networking
 public enum NeutronError: Error {
-    case badJsonResponse
+    case badResponseData
     case badUrl
 
     public var localizedDescription: String {
         switch self {
-        case .badJsonResponse:
-            return "Unexpected values in JSON"
+        case .badResponseData:
+            return "Unexpected response data"
         case .badUrl:
             return "Bad url"
         }
