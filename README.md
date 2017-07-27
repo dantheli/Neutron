@@ -7,6 +7,8 @@
 
 ## Introduction
 
+Neutron is a wrapper around Alamofire that promotes protocol-oriented Swift networking.
+
 Networking in Swift traditionally involves a tediously long list of static functions in a networking "manager" class, with each function doing repetitive calls to a library or other helper functions. Worst of all, information about each request is often scattered across different places (routes may be in one enum, parameter keys may be in another, etc.). With Neutron, requests are defined entirely in *structs*, and it's effortless to define and make them.
 
 Defining a request:
