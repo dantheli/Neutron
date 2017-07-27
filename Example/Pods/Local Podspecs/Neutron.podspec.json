@@ -1,6 +1,6 @@
 {
   "name": "Neutron",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "Promise-based, protocol-oriented network requests in Swift",
   "homepage": "https://github.com/dantheli/Neutron",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/dantheli/Neutron.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0",

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Neutron'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Promise-based, protocol-oriented network requests in Swift'
   s.homepage         = 'https://github.com/dantheli/Neutron'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
