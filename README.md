@@ -19,12 +19,12 @@ struct Login: Request {
     let username: String, password: String
     
     let route = "/login"
-    var parameters: [String: Any] = {
+    var parameters: [String: Any] = [
         return [
             "user": username,
             "pass": password
         ]
-    }
+    ]
     
     func process(response: Data) throws -> User {
         let user = ...
