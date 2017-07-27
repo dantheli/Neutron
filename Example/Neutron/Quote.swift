@@ -41,7 +41,7 @@ struct Quote {
 }
 
 // Custom protocol with a default host
-private protocol QuoteRequest: JSONRequest {}
+private protocol QuoteRequest: JSONQuark {}
 extension QuoteRequest {
     var host: String {
         return "http://quotes.rest"
