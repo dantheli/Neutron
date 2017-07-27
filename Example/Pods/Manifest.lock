@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
-  - Neutron (0.2.0):
+  - Neutron (0.3.0):
     - Alamofire
     - PromiseKit/Alamofire
     - SwiftyJSON
@@ -15,11 +15,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Neutron:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Neutron: e54bd919ec218651d6443a2a2718c970941be603
+  Neutron: b99dd1e5fdecc342927f1b39ccb1eab075f8712e
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 

@@ -16,6 +16,7 @@
 		12A8D93A674E8920086BE9234A10D191 /* Neutron-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 665E41DA4132E4862D996D12918F51B8 /* Neutron-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		165EAF8192A65DC9E2D57177EDED2C79 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC57189CED304BC3552E4440C808381 /* Error.swift */; };
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41E6B6334FADE48F863709BC84A503CA /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E62BF8510952A338C4440E5FC20BFE7 /* Neutron-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E63BA187D64BA9AC14D871C9EE21466 /* Neutron-dummy.m */; };
 		3094566F76AD2284507BE3A8583D2229 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C922D1A24DBEE311CA485C3D759CD4 /* Alamofire.framework */; };
 		30983AA9ABB8975838B14F7069BBEAE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2617631F7638DB48A4FDCAB9FA5E5F /* Foundation.framework */; };
 		334E3D7300C83BEA72BAD0996F214823 /* Promise+AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0957CAEFC508493C9E4FDBFEE7C610 /* Promise+AnyPromise.swift */; };
@@ -23,7 +24,6 @@
 		363DDAE3C9B4E556BF084BEECC2F6D15 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E0E25E691BF70D4C01059BF56713B /* State.swift */; };
 		382AEA2C8CE87BA2F2F807D08A9CCE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2617631F7638DB48A4FDCAB9FA5E5F /* Foundation.framework */; };
 		3CADE2F6AAB2E1DED5AA215B256155D2 /* Pods-Neutron_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D66ED1E7A0D2B272FF3BA8F56D4E876C /* Pods-Neutron_Example-dummy.m */; };
-		433366B4E19D667E86A1F2E158B427AF /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F82EF1F589724781AF987626111FEA /* JSONRequest.swift */; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F892F6A8B34EA2077EDCA7AAD13C93 /* Request.swift */; };
 		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDB51AD3EEEC4E9CF7F85BDF58754E /* DispatchQueue+Alamofire.swift */; };
 		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DE4DECC1A4A2F747ADBDE007701C2 /* ServerTrustPolicy.swift */; };
@@ -39,6 +39,7 @@
 		79306193802ECC22047D8091D0BB649A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A0369ACA67A7772D3A9238E1D9657 /* SwiftyJSON.swift */; };
 		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBEEE136D8B2E26FE29897D6322E395 /* SessionDelegate.swift */; };
 		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87502D19F2BB6544B0442E48747B421D /* Result.swift */; };
+		838791DD3ED1616FFA24A3983CCB78CF /* Quark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072831DBC5A4FEB3659D6FF6F97EC /* Quark.swift */; };
 		84709CE49892EFADDA7CA8306083F63D /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56EEB22A1D9888F4992E891B0CD6797 /* after.swift */; };
 		861A64C51AD439B055600956AC5B2377 /* join.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE73E8946BDDD0F4FC68DFC492A041 /* join.swift */; };
 		8A66552C68F6B4B36FA6007C1E43C88D /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C712CA1DFEBC46A4E4F30CBAFC3AB22 /* when.swift */; };
@@ -58,18 +59,17 @@
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452899190BDBAE41362FBF2A007FA695 /* Validation.swift */; };
 		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DD3F35A0BDE1E7CFF4F9742066FE6 /* ParameterEncoding.swift */; };
 		C6133540C3BE55669087EDE03584DCEE /* PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 726A353E6E07551ADDF52DB379F4A390 /* PromiseKit-dummy.m */; };
+		C7D5ECF7557B73F036BC1D5F9BA638E6 /* Neutron.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB220FE894DACEEA55F5FD075E5B0D71 /* Neutron.swift */; };
+		C82B031895F224D200292139D40FE15B /* JSONQuark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD505252EFC513C5F9F96043BCD826B4 /* JSONQuark.swift */; };
 		CB051D0D9863CB22369EF0B6CD0103BD /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB07DC3B51AF99E50E2CF192B240C1F /* SwiftyJSON.framework */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BB8B31A22F18F2264F1D9B5B4B53C /* Response.swift */; };
 		CBCE55E890A173044256B5FFD6D9C1EE /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD911EA063AFB345F55CC9FF189A9E47 /* SwiftyJSON-dummy.m */; };
 		D8718D9999AE905C289549FF3A2DC587 /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A7A132EA82BEA7490BA6FBC87708014 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D875157FA273A8B8B8A85C97C00088CE /* Neutron.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AEEA4693A52D11C1A24D6B88FC4D7B /* Neutron.swift */; };
 		DB77E86D289BB471B8EADC082E739D86 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9CFF4480EC6FEC1D836E999C0F271F /* PromiseKit.framework */; };
-		E6F6EFB5740D6B877DAA3144E4E81134 /* Neutron-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E63BA187D64BA9AC14D871C9EE21466 /* Neutron-dummy.m */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5341699E45A3CE79EE7F548CD0305E /* Notifications.swift */; };
 		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2999014AEDEEE570F2644F0EA0F9317 /* ResponseSerialization.swift */; };
 		F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3EA3A34EDD594A7BE7FCF077178BAF /* Alamofire.swift */; };
 		FA87761344671E812024AC63C3934595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2617631F7638DB48A4FDCAB9FA5E5F /* Foundation.framework */; };
-		FF2370390269EBD8FBD4A117FD2730BA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1005F31E87C9F482604AAAC0393402 /* Request.swift */; };
 		FF8F1D867B41831FAC9E1574B3A8DACD /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E8F044298E0AFE2E0F5F8017B41466E /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -153,13 +153,11 @@
 		2CB07DC3B51AF99E50E2CF192B240C1F /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		315BE9DC328E0FF52F1D28E406CA620A /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		33EBD8A2710D98DE41391A7D44713EC5 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
-		3C1005F31E87C9F482604AAAC0393402 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		3EBEEE136D8B2E26FE29897D6322E395 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		41E6B6334FADE48F863709BC84A503CA /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		4313FF256ECF9EC4A4721865A05F54FA /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		452899190BDBAE41362FBF2A007FA695 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		453D93AAD3A0046FB4CB24101AB6A277 /* Neutron.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Neutron.xcconfig; sourceTree = "<group>"; };
-		47F82EF1F589724781AF987626111FEA /* JSONRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
 		4A7A132EA82BEA7490BA6FBC87708014 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
 		4AB72091A3F87617F41F093477587AB4 /* GlobalState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GlobalState.m; path = Sources/GlobalState.m; sourceTree = "<group>"; };
 		50E5A51B1F81FB0F73364440933F8A0E /* PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PromiseKit.xcconfig; sourceTree = "<group>"; };
@@ -196,19 +194,21 @@
 		A3B93BE1A70692C85882F2AEE4B07206 /* Pods_Neutron_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Neutron_Example.framework; path = "Pods-Neutron_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BB38EA03A88408E90BACA1F51B30DB /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PromiseKit.modulemap; sourceTree = "<group>"; };
 		AA0957CAEFC508493C9E4FDBFEE7C610 /* Promise+AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+AnyPromise.swift"; path = "Sources/Promise+AnyPromise.swift"; sourceTree = "<group>"; };
+		AB220FE894DACEEA55F5FD075E5B0D71 /* Neutron.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Neutron.swift; sourceTree = "<group>"; };
 		AD3EA3A34EDD594A7BE7FCF077178BAF /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		AD505252EFC513C5F9F96043BCD826B4 /* JSONQuark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JSONQuark.swift; sourceTree = "<group>"; };
 		B2999014AEDEEE570F2644F0EA0F9317 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		B2CF809B0A65FBBA8EB13A28FE7F58B2 /* wrap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = wrap.swift; path = Sources/wrap.swift; sourceTree = "<group>"; };
 		BAB15424C67521CFBBF7CF6473AA98F0 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		BB9DCE832E70CE9D2BC6124C2ABEB541 /* Pods-Neutron_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Neutron_Example-resources.sh"; sourceTree = "<group>"; };
 		BBF4F4EC15E049DBC78FD7C1F81D04B7 /* Zalgo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zalgo.swift; path = Sources/Zalgo.swift; sourceTree = "<group>"; };
-		C4AEEA4693A52D11C1A24D6B88FC4D7B /* Neutron.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Neutron.swift; sourceTree = "<group>"; };
 		C7D2A8063692233F5E52BFDD955B15C9 /* Pods-Neutron_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Neutron_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		CD2617631F7638DB48A4FDCAB9FA5E5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D03DD3F35A0BDE1E7CFF4F9742066FE6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		D56EEB22A1D9888F4992E891B0CD6797 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
 		D5C922D1A24DBEE311CA485C3D759CD4 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66ED1E7A0D2B272FF3BA8F56D4E876C /* Pods-Neutron_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Neutron_Example-dummy.m"; sourceTree = "<group>"; };
+		D9A072831DBC5A4FEB3659D6FF6F97EC /* Quark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quark.swift; sourceTree = "<group>"; };
 		D9CC3A258023B6FCE6ABCAE0060071D6 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		DBFEA1849D4463AF223502A45ADCB7D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCF0FD51AA7CAE7E32E7BA5C7E427AA0 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
@@ -333,17 +333,6 @@
 			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
-		36835AEBB2788BF55F750559E5B87C0D /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				47F82EF1F589724781AF987626111FEA /* JSONRequest.swift */,
-				C4AEEA4693A52D11C1A24D6B88FC4D7B /* Neutron.swift */,
-				3C1005F31E87C9F482604AAAC0393402 /* Request.swift */,
-			);
-			name = Sources;
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		6F0E0730D0CA65405A42AFEDAD39D959 /* CorePromise */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,7 +392,7 @@
 		86ACE36B650ED41297916EE427C0A4DC /* Neutron */ = {
 			isa = PBXGroup;
 			children = (
-				36835AEBB2788BF55F750559E5B87C0D /* Sources */,
+				E8190C80D5EA42B289CDC4A3C4F74503 /* Sources */,
 				8E5F3F5649E7E3AAF9749BF0FE662922 /* Support Files */,
 			);
 			name = Neutron;
@@ -510,6 +499,17 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		E8190C80D5EA42B289CDC4A3C4F74503 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AD505252EFC513C5F9F96043BCD826B4 /* JSONQuark.swift */,
+				AB220FE894DACEEA55F5FD075E5B0D71 /* Neutron.swift */,
+				D9A072831DBC5A4FEB3659D6FF6F97EC /* Quark.swift */,
+			);
+			name = Sources;
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		EBC0CABA24165C0EDA28EC260BBECCA9 /* PromiseKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,7 +592,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73B3087EC107C6249754F9254A64A2C7 /* Build configuration list for PBXNativeTarget "Neutron" */;
 			buildPhases = (
-				BF59B37A5A428A93ED9C1688D41F20AE /* Sources */,
+				C9BC10F67EC217061F3C7E67D4C5EED1 /* Sources */,
 				5B4C33DA8FE5403E20C2F9A96150A318 /* Frameworks */,
 				EF5187C39FBF73E2371BB0A8DE951A69 /* Headers */,
 			);
@@ -765,14 +765,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF59B37A5A428A93ED9C1688D41F20AE /* Sources */ = {
+		C9BC10F67EC217061F3C7E67D4C5EED1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				433366B4E19D667E86A1F2E158B427AF /* JSONRequest.swift in Sources */,
-				E6F6EFB5740D6B877DAA3144E4E81134 /* Neutron-dummy.m in Sources */,
-				D875157FA273A8B8B8A85C97C00088CE /* Neutron.swift in Sources */,
-				FF2370390269EBD8FBD4A117FD2730BA /* Request.swift in Sources */,
+				C82B031895F224D200292139D40FE15B /* JSONQuark.swift in Sources */,
+				2E62BF8510952A338C4440E5FC20BFE7 /* Neutron-dummy.m in Sources */,
+				C7D5ECF7557B73F036BC1D5F9BA638E6 /* Neutron.swift in Sources */,
+				838791DD3ED1616FFA24A3983CCB78CF /* Quark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,40 +1,40 @@
 import Alamofire
 import PromiseKit
 
-/// `Request` is a protocol to which structs can conform to create expressive, self-documenting
+/// A `Quark` is a protocol to which structs can conform to create expressive, self-documenting
 /// REST API requests.
 ///
-/// A protocol can also inherit `Request` and supply its own defaults.
-public protocol Request: CustomStringConvertible {
+/// A protocol can also inherit `Quark` and supply its own defaults.
+public protocol Quark: CustomStringConvertible {
 
-    /// Required type that the user of the `Request` wishes to get in return.
-    /// The creator of a `Request` must produce this ResponseType in the required `process` method.
+    /// Required type that the user of the `Quark` wishes to get in return.
+    /// The creator of a `Quark` must produce this ResponseType in the required `process` method.
     ///
     /// e.g. A "get all posts" request may want `ResponseType` to be `[Post]`, array of `Post`s
     associatedtype ResponseType
 
-    /// The base host URL for the `Request`. This requires `http://` or `https
+    /// The base host URL for the `Quark`. This requires `http://` or `https
     ///
     /// Default is `http://localhost`.
     var host: String { get }
 
-    /// The version of the API, if any, from which the `Request` wishes to retrieve.`
+    /// The version of the API, if any, from which the `Quark` wishes to retrieve.`
     /// If `.versioned`, the protocol will insert the `/v#` route where # is the version number.
     ///
     /// Default is `.none`.
     var api: APIVersion { get }
 
-    /// Required route for the `Request`, with no default
+    /// Required route for the `Quark`, with no default
     ///
     /// e.g. "/posts"
     var route: String { get }
 
-    /// The HTTP method of the `Request`. See Alamofire's documentation.
+    /// The HTTP method of the `Quark`. See Alamofire's documentation.
     ///
     /// Default is `.get`.
     var method: HTTPMethod { get }
 
-    /// Parameters for the `Request`.
+    /// Parameters for the `Quark`.
     ///
     /// Default is empty dictionary.
     var parameters: [String : Any] { get }
@@ -44,12 +44,12 @@ public protocol Request: CustomStringConvertible {
     /// Default is `URLEncoding.default`
     var encoding: ParameterEncoding { get }
 
-    /// Headers for the Request.
+    /// Headers for the `Quark`.
     ///
     /// Default is empty dictionary.
     var headers: HTTPHeaders { get }
 
-    /// Required method that the creator of the `Request` must implement. If the network request
+    /// Required method that the creator of the `Quark` must implement. If the network request
     /// is successful, this method will be called with the data from the response body.
     func process(response: Data) throws -> ResponseType
 }
@@ -64,7 +64,7 @@ public enum APIVersion {
     case versioned(Int)
 }
 
-public extension Request {
+public extension Quark {
 
     // String description for CustomStringConvertible
     var description: String {
@@ -85,7 +85,7 @@ public extension Request {
     }
 
     var method: HTTPMethod { return .get }
-    var parameters: [String : Any] { return [:] }
+    var parameters: Parameters { return [:] }
     var encoding: ParameterEncoding { return URLEncoding.default }
     var headers: HTTPHeaders { return [:] }
 
@@ -94,7 +94,7 @@ public extension Request {
             throw NeutronError.badUrl
         }
 
-        return Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+        return request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
 
     func make() -> Promise<ResponseType> {

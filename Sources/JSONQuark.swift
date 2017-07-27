@@ -2,14 +2,14 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
-/// A `JSONRequest` is a child protocol of `Request` that gives each request a response in the form of
+/// A `JSONQuark` is a child protocol of `Quark` that gives each quark a response in the form of
 /// `JSON` rather than `Data`.
-public protocol JSONRequest: Request {
+public protocol JSONQuark: Quark {
     associatedtype ResponseType
     func process(response: JSON) throws -> ResponseType
 }
 
-public extension JSONRequest {
+public extension JSONQuark {
     public func process(response: Data) throws -> ResponseType {
         return try process(response: JSON(data: response))
     }
