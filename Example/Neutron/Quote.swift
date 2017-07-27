@@ -18,7 +18,7 @@ struct Quote {
 
         let route: String = "/qod.json"
         var parameters: [String : Any] {
-            
+
             guard let category = category else { return [:] }
             return [
                 "category": category
@@ -31,7 +31,7 @@ struct Quote {
             guard let id = quotes["id"].string,
                 let author = quotes["author"].string,
                 let text = quotes["quote"].string else {
-                    throw NeutronError.badJsonResponse
+                    throw NeutronError.badResponseData
             }
 
             let quote = Quote(id: id, text: text, author: author)
@@ -39,7 +39,6 @@ struct Quote {
         }
     }
 }
-
 
 // Custom protocol with a default host
 private protocol QuoteRequest: JSONRequest {}

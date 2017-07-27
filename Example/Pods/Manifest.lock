@@ -15,11 +15,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Neutron:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Neutron: a6089c264a1cbde1ad8332d3a03bd6145065f52c
+  Neutron: 4fb8e5f62d66ed4d6536574063691d24ae3f8e8b
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
