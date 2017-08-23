@@ -44,7 +44,7 @@ Login(username: "user", password: "****").make()
     }
 ```
 
-That's it. Since *Quark* is a protocol, structs and promises (see [PromiseKit](https://github.com/mxcl/PromiseKit)), make it easy to define, form, and make the network request. Aside from default request data, everything about the request is contained in the struct.
+That's it. Since *Quark* is a protocol, structs and promises (see [PromiseKit](https://github.com/mxcl/PromiseKit)) make it easy to define, form, and perform the network request. Aside from default request data, everything about the request is contained in the struct.
 
 Ultimately, Neutron improves upon the traditional network manager paradigm with:
 - [x] Expressive, self-contained requests
@@ -156,9 +156,9 @@ let renameRequest = RenameTodo(id: id, title: title)
 let copy = renameRequest
 ```
 
-### Making the Quark Requests
+### Performing the Quark Requests
 
-Finally, you just want to make requests. Call the `make` function on the request, which returns a [PromiseKit](https://github.com/mxcl/PromiseKit) promise, and handle it accordingly:
+Finally, call the `make` function on the request, which returns a [PromiseKit](https://github.com/mxcl/PromiseKit) promise, and handle it accordingly:
 
 ```swift
 RenameTodo(id: id, title: title).make()
