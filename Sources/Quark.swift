@@ -99,13 +99,12 @@ public extension Quark {
 
     func make() -> Promise<ResponseType> {
         do {
-            let promise = try dataRequest()
+            return try dataRequest()
                 .validate()
                 .responseData()
-                .then { data -> ResponseType in
+                .map { (data, _) -> ResponseType in
                     return try self.process(response: data)
-            }
-            return promise
+                }
         } catch {
             return Promise<ResponseType>(error: error)
         }

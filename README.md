@@ -36,7 +36,7 @@ struct Login: Quark {
 Forming and making the request:
 ```swift
 Login(username: "user", password: "****").make()
-    .then { user in
+    .done { user in
         print("Got user:", user)
     }
     .catch { error in
@@ -162,7 +162,7 @@ Finally, call the `make` function on the request, which returns a [PromiseKit](h
 
 ```swift
 RenameTodo(id: id, title: title).make()
-    .then { todo in
+    .done { todo in
         // use updated todo
         print(todo)
     }

@@ -12,7 +12,7 @@ class ViewController: UIViewController {
         let request = Quote.Get(category: "management")
 
         request.make()
-            .then { quote in
+            .done { quote in
                 self.label.text = "Got quote!\n\(quote.text)\n- \(quote.author)"
             }
             .catch { error in
