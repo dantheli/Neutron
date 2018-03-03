@@ -5,7 +5,6 @@ import PromiseKit
 /// A `JSONQuark` is a child protocol of `Quark` that gives each quark a response in the form of
 /// `JSON` rather than `Data`.
 public protocol JSONQuark: Quark {
-    associatedtype ResponseType
     func process(response: JSON) throws -> ResponseType
 }
 
