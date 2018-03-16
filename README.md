@@ -9,11 +9,11 @@
 
 Neutron is a wrapper around Alamofire that promotes protocol-oriented Swift networking.
 
-Networking in Swift usually involves a tediously long list of static functions in a networking "manager" class, with each function doing repetitive calls to other functions. Worse, information about each request is often scattered across different places (routes may be in one enum, parameter keys may be in another, etc.). With Neutron, you define requests in structs called *Quarks*:
+Networking in Swift usually involves a tediously long list of static functions in a networking "manager" class, with each function doing repetitive calls to other functions. Worse, information about each request is often scattered across different places (routes may be in one enum, parameter keys may be in another, etc.). With Neutron, you define requests in structs called *Requests*:
 
-Defining a Quark:
+Defining a Request:
 ```swift
-struct Login: Quark {
+struct Login: Request {
     typealias ResponseType = User
 
     let username: String, password: String
@@ -44,7 +44,7 @@ Login(username: "user", password: "****").make()
     }
 ```
 
-That's it. Since *Quark* is a protocol, structs and promises (see [PromiseKit](https://github.com/mxcl/PromiseKit)) make it easy to define, form, and perform the network request. Aside from default request data, everything about the request is contained in the struct.
+That's it. Since *Request* is a protocol, structs and promises (see [PromiseKit](https://github.com/mxcl/PromiseKit)) make it easy to define, form, and perform the network request. Aside from default request data, everything about the request is contained in the struct.
 
 Ultimately, Neutron improves upon the traditional network manager paradigm with:
 - [x] Expressive, self-contained requests
@@ -55,14 +55,14 @@ Ultimately, Neutron improves upon the traditional network manager paradigm with:
 
 ## Usage
 
-### Defining Quarks
+### Defining Requests
 
-A Quark is a struct that conforms to the `Quark` protocol or a protocol which inherits from it:
+A Request is a struct that conforms to the `Request` protocol or a protocol which inherits from it:
 
 ```swift
 import Neutron
 
-struct MyQuark: Quark {
+struct MyRequest: Request {
     <response type>
     <properties>
     <process method>
@@ -131,7 +131,7 @@ Lastly, implement the required `func process(response: Data) throws -> ResponseT
 With the to-do renaming example, if the server returns a JSON of the new todo, we might write the `process` method as such, using SwiftyJSON:
 ```swift
 func process(response: Data) throws -> Todo {
-    let json = JSON(data) // unnecessary, see 'Custom Quarks'
+    let json = JSON(data) // unnecessary, see 'Custom Requests'
     guard let id: Int = json["id"].int,
         let title: String = json["title"].string else {
         throw NeutronError.badResponseData // throw error if unexpected data
@@ -141,7 +141,7 @@ func process(response: Data) throws -> Todo {
 }
 ```
 
-### Forming Quarks
+### Forming Requests
 
 Forming a request is as easy as calling the Swift-generated "memberwise" initializer:
 
@@ -156,7 +156,7 @@ let renameRequest = RenameTodo(id: id, title: title)
 let copy = renameRequest
 ```
 
-### Performing the Quark Requests
+### Performing the Request Requests
 
 Finally, call the `make` function on the request, which returns a [PromiseKit](https://github.com/mxcl/PromiseKit) promise, and handle it accordingly:
 
@@ -172,20 +172,20 @@ RenameTodo(id: id, title: title).make()
     }
 ```
 
-### Custom Quarks
+### Custom Requests
 
 It may be concerning that the default host for requests is `localhost`, and that the `process` method has a parameter of type `Data` and not something like `JSON`. This is where protocol composability comes in!
 
-You can use the `JSONQuark` protocol for requests that are sure to return [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) JSON. With `JSONQuark`, the `response` parameter in the `process` method is of type `JSON` instead of `Data`.
+You can use the `JSONRequest` protocol for requests that are sure to return [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) JSON. With `JSONRequest`, the `response` parameter in the `process` method is of type `JSON` instead of `Data`.
 
-You can provide your own protocol requirements and default implementations when you create your protocol that inherits from `Quark` or a sub-protocol of it, like `JSONQuark`:
+You can provide your own protocol requirements and default implementations when you create your protocol that inherits from `Request` or a sub-protocol of it, like `JSONRequest`:
 
 ```swift
-protocol TodoQuark: Quark {
+protocol TodoRequest: Request {
     var authToken: String { get } // every request should provide one
 }
 
-extension TodoQuark { // custom default implementations
+extension TodoRequest { // custom default implementations
     var host: String {
         return "https://my.todo.list.server"
     }
@@ -204,9 +204,9 @@ If we so choose, requests can be nested inside our models as RESTful resource re
 ```swift
 class BlogPost { ... }
 extension BlogPost {
-    struct Get: Quark { ... }
-    struct Post: Quark { ... }
-    struct Delete: Quark { ... }
+    struct Get: Request { ... }
+    struct Post: Request { ... }
+    struct Delete: Request { ... }
 }
 
 // Later...
@@ -236,7 +236,7 @@ pod "Neutron"
 - [ ] README documentation
 - [ ] Testing and CI
 - [ ] Swift 2.x compatability
-- [ ] More Quarks
+- [ ] More Requests
 - [ ] Configuration and documentation in Neutron.swift
 - [ ] Remove dependencies and make them optional subspecs
 

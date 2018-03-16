@@ -1,7 +1,7 @@
 import Foundation
 
 /// The `Neutron` class provides configurable settings for requests created
-/// using the `Quark` protocol
+/// using the `Request` protocol
 public class Neutron {
     fileprivate init() {}
 
